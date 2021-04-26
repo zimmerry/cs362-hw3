@@ -6,7 +6,13 @@ def isLeap(year):
         return True
     return False
 
-year = input("Enter a year: ")
+def getYear():
+    year = input("Enter a year: ")
+    if (not year.isdigit()):
+        return getYear()
+    return year
+
+year = getYear()
 
 if isLeap(int(year)):
     print(year, "is a leap year.")
